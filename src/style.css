@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.sound--board {
+    /* display: grid;
+    grid-template-rows: 3;
+    grid-template-columns: 2; */
+    display: flex;
+}
+
+.button--card {
+    background-color: pink;
+}
