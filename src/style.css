@@ -7,9 +7,10 @@
     height: 100vh;
     display: grid;
     justify-content: center;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr;
     grid-template-areas: "header" "soundboard";
+    justify-items: center;
 }
 
 header {
@@ -19,19 +20,18 @@ header {
     grid-area: header;
 }
 .sound--board {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 75%;
-    height: 75%;
-    padding: 0;
+    display: inline-grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 3px;
     grid-area: soundboard;
 }
 
 .button--card {
-    background-color: pink;
-    width: 100px;
-    height: 100px;
+    background-color: rgb(245, 190, 255);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(215, 196, 255);
+    font-size: 3em;
 }
