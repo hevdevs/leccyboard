@@ -35,3 +35,12 @@ header {
     border: 3px solid rgb(215, 196, 255);
     font-size: 3em;
 }
+
+.button--card--active {
+    background-color: rgb(255, 222, 124);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(215, 196, 255);
+    font-size: 3em;
+}
