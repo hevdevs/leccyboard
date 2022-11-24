@@ -1,10 +1,12 @@
 import React from 'react';
 
-const StartButton = ({ setGameStarted }) => {
+const StartButton = ({ setGameStarted, runButtonSequence, gameStarted, playerSequence, simonSequence }) => {
 	return (
-		<button
+        <button
+            disabled={gameStarted && playerSequence.length !== simonSequence.length ? true : false}
 			onClick={() => {
-				setGameStarted(true);
+                setGameStarted(true);
+                runButtonSequence()
 			}}
 		>
 			StartButton
