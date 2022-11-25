@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    background-color: rgb(255, 255, 255);
 }
 
 .App {
@@ -14,10 +15,16 @@
 }
 
 header {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(50, 255, 183);
-    text-shadow: 3px 3px 3px rgb(242, 94, 255);
+    font-family: 'MuseoModerno', cursive;
+    color: rgb(83, 255, 189);
+    text-shadow: 2px 2px 2px rgb(247, 136, 255);
     grid-area: header;
+    font-weight: 500;
+}
+h1 {
+    font-size: 75px;
+margin-top:0;
+margin-bottom:0;
 }
 .sound--board {
     display: inline-grid;
@@ -27,20 +34,29 @@ header {
     grid-area: soundboard;
 }
 
+button {
+    border: 3px solid rgb(83, 255, 189);
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-family:'Arial';
+    font-weight:bolder;
+    color: rgb(42, 42, 42)
+}
+
 .button--card {
-    background-color: rgb(245, 190, 255);
+    background-color: rgb(247, 136, 255);
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(215, 196, 255);
+    border: 3px solid rgb(255, 164, 244);
     font-size: 3em;
 }
 
 .button--card--active {
-    background-color: rgb(255, 222, 124);
+    background-color: rgb(83, 255, 189);
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(215, 196, 255);
+    border: 3px solid rgb(132, 239, 198);
     font-size: 3em;
 }
