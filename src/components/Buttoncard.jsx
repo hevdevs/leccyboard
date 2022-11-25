@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import sadWah from '../assets/wah.mp3';
 
 export const Buttoncard = ({
 	soundButton,
@@ -17,6 +18,7 @@ export const Buttoncard = ({
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const audio = new Audio(soundButton.link);
+	const failAudio = new Audio(sadWah)
 
 	const handleButtonPress = () => {
 		setIsPlaying(true);
@@ -25,12 +27,12 @@ export const Buttoncard = ({
 			if (gamesWon > highscore) {
 				setHighScore(gamesWon);
 			}
-			audio.play();
+			failAudio.play();
 			setPlayerSequence([]);
 			setSequencePos(0);
 			setTimeout(() => {
 				setIsPlaying(false);
-			}, 300);
+			}, 350);
 			setSimonSequence([]);
 			setGamesWon(0);
 			setGameStarted(false);
@@ -43,7 +45,7 @@ export const Buttoncard = ({
 			audio.play();
 			setTimeout(() => {
 				setIsPlaying(false);
-			}, 300);
+			}, 350);
 			setGamesWon((currVal) => ++currVal);
 			setSequencePos(0);
 			setPlayerSequence([]);
