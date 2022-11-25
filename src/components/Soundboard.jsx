@@ -93,7 +93,6 @@ export const Soundboard = () => {
 						soundButton={soundButton}
 						playerSequence={playerSequence}
 						setPlayerSequence={setPlayerSequence}
-						playerSequence={playerSequence}
 						simonSequence={simonSequence}
 						setGameStarted={setGameStarted}
 						setGamesWon={setGamesWon}
