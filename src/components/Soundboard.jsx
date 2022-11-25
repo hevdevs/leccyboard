@@ -82,15 +82,17 @@ export const Soundboard = () => {
 				
 				setTimeout(() => {
 					button.classList.remove('button--card--active');
-				}, 500)
-			}, 500 * i)
+				}, 400)
+			}, 600 * i)
 		})
 	}
 
 	return (
-		<>
-			<h3 id="curr--score">Best: {highscore}</h3>
-			<h2 id="curr--score">Score: {gamesWon}</h2>
+		<>	
+			<div className="score--container">
+				<h2 id="curr--score">Score: {gamesWon}</h2>
+				<h3 id="best--score">Best: {highscore}</h3>
+			</div>
 			<div className="sound--board">
 				{soundButtons.map((soundButton) => (
 					<Buttoncard
@@ -111,6 +113,8 @@ export const Soundboard = () => {
 					/>
 				))}
 			</div>
+			<footer>
+			
 			<StartButton
 				setGameStarted={setGameStarted}
 				runButtonSequence={runButtonSequence}
@@ -118,7 +122,8 @@ export const Soundboard = () => {
 				playerSequence={playerSequence}
 				simonSequence={simonSequence}
 				setSequencePos={setSequencePos}
-			/>
+				/>
+			</footer>
 		</>
 	);
 };
