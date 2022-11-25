@@ -9,7 +9,7 @@ const StartButton = ({ setGameStarted, runButtonSequence, gameStarted, playerSeq
 				runButtonSequence()
 			}}
 		>
-			PLAY
+			{simonSequence.length === 0 ? "Play" : "Next"}
 		</button>
 	);
 };
