@@ -6,7 +6,7 @@ export const Soundboard = () => {
 	const [sequencePos, setSequencePos] = useState(0);
 	const [gamesWon, setGamesWon] = useState(0);
 	const [gameStarted, setGameStarted] = useState(false);
-	const [simonSequence, setSimonSequence] = useState([8,4,2,3])
+	const [simonSequence, setSimonSequence] = useState([])
 	const [playerSequence, setPlayerSequence] = useState([])
 
 	const soundButtons = [
@@ -66,9 +66,12 @@ export const Soundboard = () => {
 		}
 	];
 
-
 	const runButtonSequence = () => {
-		simonSequence.forEach((num, i) => {
+		const vals = [...simonSequence];
+		vals.push(Math.floor(Math.random() * 9));
+		setSimonSequence(vals);
+		
+		vals.forEach((num, i) => {
 			setTimeout(() => {
 				const button = document.getElementById(num)
 				button.classList.add('button--card--active');
@@ -85,7 +88,7 @@ export const Soundboard = () => {
 
 	return (
 		<>
-			{gamesWon}
+			<h2 id="curr--score">Score: {gamesWon}</h2>
 			<div className="sound--board">
 				{soundButtons.map((soundButton) => (
 					<Buttoncard
