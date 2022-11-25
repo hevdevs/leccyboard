@@ -67,6 +67,7 @@ export const Soundboard = () => {
 
 	const runButtonSequence = () => {
 		// gameStarted === TRUE then we want to have a random button light up and play noise
+
 		simonSequence.forEach((num, i) => {
 			setTimeout(() => {
 				const button = document.getElementById(num)
@@ -80,6 +81,7 @@ export const Soundboard = () => {
 				}, 100)
 			}, 300 * i)
 		})
+
 		// need to track which button was played (in state array?)
 		// need array of buttons the player presses after sequence ends
 	}
@@ -91,7 +93,9 @@ export const Soundboard = () => {
 					<Buttoncard
 						key={soundButton.id}
 						soundButton={soundButton}
+						playerSequence={playerSequence}
 						setPlayerSequence={setPlayerSequence}
+						simonSequence={simonSequence}
 					/>
 				))}
 			</div>

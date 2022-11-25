@@ -1,19 +1,24 @@
 import React, {useState} from 'react'
 
-export const Buttoncard = ({ soundButton, setPlayerSequence }) => {
+export const Buttoncard = ({ soundButton, playerSequence, setPlayerSequence, simonSequence }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audio = new Audio(soundButton.link);
   
   const handleButtonPress = () => {
     setIsPlaying(true)
-    setPlayerSequence((currSequence) => {
-      return [...currSequence, soundButton.id]
-    });
-    audio.play()
-    setTimeout(() => {
-      setIsPlaying(false)
-    }, 300)
+    if (soundButton.id !== simonSequence[soundButton.id]) {
+      console.log('LOSERR!')
+    } else {
+      setPlayerSequence((currSequence) => {
+        return [...currSequence, soundButton.id]
+      });
+      audio.play()
+      setTimeout(() => {
+        setIsPlaying(false)
+      }, 300)
+    }
+  
   }
 
   return (
