@@ -3,9 +3,10 @@ import { Buttoncard } from './Buttoncard';
 import StartButton from './StartButton';
 
 export const Soundboard = () => {
-	const [sequenceLength, setSequenceLength] = useState(1);
+	const [sequencePos, setSequencePos] = useState(0);
+	const [gamesWon, setGamesWon] = useState(0);
 	const [gameStarted, setGameStarted] = useState(false);
-	const [simonSequence, setSimonSequence] = useState([0, 7, 4])
+	const [simonSequence, setSimonSequence] = useState([8,4,2,3])
 	const [playerSequence, setPlayerSequence] = useState([])
 
 	const soundButtons = [
@@ -65,9 +66,8 @@ export const Soundboard = () => {
 		}
 	];
 
-	const runButtonSequence = () => {
-		// gameStarted === TRUE then we want to have a random button light up and play noise
 
+	const runButtonSequence = () => {
 		simonSequence.forEach((num, i) => {
 			setTimeout(() => {
 				const button = document.getElementById(num)
@@ -75,19 +75,17 @@ export const Soundboard = () => {
 				const currButton = soundButtons[num]
 				const audio = new Audio(currButton.link)
 				audio.play()
-				console.log('ee', currButton.id)
+				
 				setTimeout(() => {
 					button.classList.remove('button--card--active');
-				}, 100)
-			}, 300 * i)
+				}, 500)
+			}, 500 * i)
 		})
-
-		// need to track which button was played (in state array?)
-		// need array of buttons the player presses after sequence ends
 	}
 
 	return (
 		<>
+			{gamesWon}
 			<div className="sound--board">
 				{soundButtons.map((soundButton) => (
 					<Buttoncard
@@ -95,7 +93,13 @@ export const Soundboard = () => {
 						soundButton={soundButton}
 						playerSequence={playerSequence}
 						setPlayerSequence={setPlayerSequence}
+						playerSequence={playerSequence}
 						simonSequence={simonSequence}
+						setGameStarted={setGameStarted}
+						setGamesWon={setGamesWon}
+						sequencePos={sequencePos}
+						gameStarted={gameStarted}
+						setSequencePos={setSequencePos}
 					/>
 				))}
 			</div>
@@ -105,6 +109,7 @@ export const Soundboard = () => {
 				gameStarted={gameStarted}
 				playerSequence={playerSequence}
 				simonSequence={simonSequence}
+				setSequencePos={setSequencePos}
 			/>
 		</>
 	);
