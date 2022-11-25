@@ -1,17 +1,17 @@
 * {
     box-sizing: border-box;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color:rgb(25, 40, 54)
 }
 
 .App {
     height: 100vh;
     display: grid;
     justify-content: center;
-    grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "soundboard";
+    grid-template-rows: 15% 15% 50% 20%;
+    grid-template-areas: "header" "score" "soundboard";
     justify-items: center;
+
 }
 
 header {
@@ -21,11 +21,7 @@ header {
     grid-area: header;
     font-weight: 500;
 }
-h1 {
-    font-size: 75px;
-margin-top:0;
-margin-bottom:0;
-}
+
 .sound--board {
     display: inline-grid;
     grid-template-rows: 100px 100px 100px;
@@ -34,13 +30,33 @@ margin-bottom:0;
     grid-area: soundboard;
 }
 
+#curr--score {
+    grid-area: "score";
+    font-family: 'Teko';
+    color:rgb(247, 136, 255);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+h1 {
+    font-size: 75px;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+
 button {
+    height: 4rem;
     border: 3px solid rgb(83, 255, 189);
     border-radius: 1rem;
     padding: 0.5rem 1rem;
-    font-family:'Arial';
-    font-weight:bolder;
-    color: rgb(42, 42, 42)
+    font-family:'Teko', sans-serif;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    color: rgb(247, 136, 255);
+    font-size: 2rem;
+}
+
+button:disabled {
+    color: rgb(179, 179, 179);
+    border: 3px solid rgb(203, 222, 215);
 }
 
 .button--card {
@@ -48,7 +64,7 @@ button {
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: 3px solid rgb(255, 164, 244);
+    border: 3px solid rgb(189, 91, 227);
     font-size: 3em;
 }
 
