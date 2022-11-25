@@ -8,8 +8,8 @@
     height: 100vh;
     display: grid;
     justify-content: center;
-    grid-template-rows: 15% 15% 50% 20%;
-    grid-template-areas: "header" "score" "soundboard";
+    grid-template-rows: 15% 15% 45% 25%;
+    grid-template-areas: "header" "score" "soundboard" "info";
     justify-items: center;
 
 }
@@ -20,6 +20,7 @@ header {
     text-shadow: 2px 2px 2px rgb(247, 136, 255);
     grid-area: header;
     font-weight: 500;
+    text-decoration: underline;
 }
 
 .sound--board {
@@ -30,12 +31,27 @@ header {
     grid-area: soundboard;
 }
 
-#curr--score {
+.score--container {
     grid-area: "score";
+}
+
+#curr--score {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
     font-family: 'Teko';
     color:rgb(247, 136, 255);
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
+
+#best--score {
+    margin-top: 0;
+    font-size: 2rem;
+    font-family: 'Teko';
+    color:rgb(83, 255, 189);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
 h1 {
     font-size: 75px;
     margin-top:0;
@@ -50,6 +66,7 @@ button {
     padding: 0.5rem 1rem;
     font-family:'Teko', sans-serif;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    box-shadow: 1px 1px 1px rgb(0, 0, 0);
     color: rgb(247, 136, 255);
     font-size: 2rem;
 }
@@ -66,13 +83,29 @@ button:disabled {
     align-items: center;
     border: 3px solid rgb(189, 91, 227);
     font-size: 3em;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 .button--card--active {
     background-color: rgb(83, 255, 189);
+    box-shadow: 1px 1px 1px rgb(0, 0, 0);
     text-align: center;
     justify-content: center;
     align-items: center;
     border: 3px solid rgb(132, 239, 198);
     font-size: 3em;
+}
+
+.desc--text {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: rgb(255, 160, 65);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    font-family:'Teko', sans-serif;
+    font-size: 2rem;
+}
+
+footer {
+    margin: 0;
+    grid-area: "info";
 }
