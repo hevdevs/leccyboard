@@ -8,6 +8,7 @@ export const Soundboard = () => {
 	const [gameStarted, setGameStarted] = useState(false);
 	const [simonSequence, setSimonSequence] = useState([])
 	const [playerSequence, setPlayerSequence] = useState([])
+	const [highscore, setHighScore] = useState(0)
 
 	const soundButtons = [
 		{
@@ -88,6 +89,7 @@ export const Soundboard = () => {
 
 	return (
 		<>
+			<h3 id="curr--score">Best: {highscore}</h3>
 			<h2 id="curr--score">Score: {gamesWon}</h2>
 			<div className="sound--board">
 				{soundButtons.map((soundButton) => (
@@ -97,11 +99,15 @@ export const Soundboard = () => {
 						playerSequence={playerSequence}
 						setPlayerSequence={setPlayerSequence}
 						simonSequence={simonSequence}
+						setSimonSequence={setSimonSequence}
 						setGameStarted={setGameStarted}
 						setGamesWon={setGamesWon}
 						sequencePos={sequencePos}
 						gameStarted={gameStarted}
 						setSequencePos={setSequencePos}
+						setHighScore={setHighScore}
+						gamesWon={gamesWon}
+						highscore={highscore}
 					/>
 				))}
 			</div>

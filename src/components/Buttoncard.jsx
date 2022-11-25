@@ -6,9 +6,13 @@ export const Buttoncard = ({
 	playerSequence,
 	setGameStarted,
 	simonSequence,
+	setSimonSequence,
 	setGamesWon,
 	setSequencePos,
-  sequencePos
+	sequencePos,
+	setHighScore,
+	gamesWon,
+	highscore,
 }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 
@@ -18,19 +22,24 @@ export const Buttoncard = ({
 		setIsPlaying(true);
 		if (simonSequence[sequencePos] !== soundButton.id) {
 			//lose scenario
+			if (gamesWon > highscore) {
+				setHighScore(gamesWon);
+			}
 			audio.play();
 			setPlayerSequence([]);
 			setSequencePos(0);
 			setTimeout(() => {
 				setIsPlaying(false);
 			}, 300);
+			setSimonSequence([]);
+			setGamesWon(0);
 			setGameStarted(false);
 		} else if (
 			(simonSequence[sequencePos] === soundButton.id &&
 				simonSequence.length) ===
 			playerSequence.length + 1
-    ) {
-      //win scenario
+		) {
+			//win scenario
 			audio.play();
 			setTimeout(() => {
 				setIsPlaying(false);
@@ -39,8 +48,8 @@ export const Buttoncard = ({
 			setSequencePos(0);
 			setPlayerSequence([]);
 			setGameStarted(false);
-    } else {
-      //correct button press, sequence incomplete
+		} else {
+			//correct button press, sequence incomplete
 			setSequencePos((currVal) => {
 				return ++currVal;
 			});
