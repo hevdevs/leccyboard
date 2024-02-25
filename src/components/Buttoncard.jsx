@@ -49,7 +49,7 @@ export const Buttoncard = ({
 			audio.play();
 			setTimeout(() => {
 				setIsPlaying(false);
-			}, 0);
+			}, 350);
 			setSequencePos(0);
 			setGamesWon((currVal) => ++currVal);
 			setPlayerSequence([]);
@@ -66,7 +66,7 @@ export const Buttoncard = ({
 			setTimeout(() => {
 				setIsPlaying(false);
 				setDisableButtons(false);
-			}, 300);
+			}, 350);
 		}
 	};
 
