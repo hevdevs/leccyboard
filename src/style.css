@@ -1,111 +1,113 @@
 * {
-    box-sizing: border-box;
-    text-align: center;
-    background-color:rgb(25, 40, 54)
+	box-sizing: border-box;
+	text-align: justify;
+	background-color: rgb(25, 40, 54);
 }
 
 .App {
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 15% 15% 45% 25%;
-    grid-template-areas: "header" "score" "soundboard" "info";
-    justify-items: center;
-
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
 }
 
 header {
-    font-family: 'MuseoModerno', cursive;
-    color: rgb(83, 255, 189);
-    text-shadow: 2px 2px 2px rgb(247, 136, 255);
-    grid-area: header;
-    font-weight: 500;
-    text-decoration: underline;
+	margin: auto;
+	font-family: "MuseoModerno", "Garamond";
+	color: rgb(83, 255, 189);
+	text-shadow: 2px 2px 2px rgb(247, 136, 255);
+	font-weight: 500;
+	text-decoration: none;
+	align-self: flex-start;
 }
 
 .sound--board {
-    display: inline-grid;
-    grid-template-rows: 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px;
-    grid-gap: 3px;
-    grid-area: soundboard;
+	display: inline-grid;
+	flex-wrap: nowrap;
+	flex-grow: 2;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 3px;
+	height: 60vw;
+	margin-bottom: 1rem;
+	aspect-ratio: 1/1;
+	align-self: center;
 }
 
 .score--container {
-    grid-area: "score";
+	grid-area: "score";
 }
 
 #curr--score {
-    font-size: 2rem;
-    margin-bottom: 0;
-    margin-top: 0.5rem;
-    font-family: 'Teko';
-    color:rgb(247, 136, 255);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	font-size: 2rem;
+	margin-bottom: 0;
+	margin-top: 0.5rem;
+	font-family: "Teko";
+	color: rgb(247, 136, 255);
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 #best--score {
-    margin-top: 0;
-    font-size: 2rem;
-    font-family: 'Teko';
-    color:rgb(83, 255, 189);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	margin-top: 0;
+	font-size: 2rem;
+	font-family: "Teko";
+	color: rgb(83, 255, 189);
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 h1 {
-    font-size: 75px;
-    margin-top:0;
-    margin-bottom:0;
+	font-size: 75px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
-
 button {
-    height: 4rem;
-    border: 3px solid rgb(83, 255, 189);
-    border-radius: 1rem;
-    padding: 0.5rem 1rem;
-    font-family:'Teko', sans-serif;
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-    box-shadow: 1px 1px 1px rgb(0, 0, 0);
-    color: rgb(247, 136, 255);
-    font-size: 2rem;
+	height: 4rem;
+	border: 3px solid rgb(83, 255, 189);
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	font-family: "Teko", sans-serif;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	box-shadow: 1px 1px 1px rgb(0, 0, 0);
+	color: rgb(247, 136, 255);
+	font-size: 2rem;
 }
 
 button:disabled {
-    color: rgb(179, 179, 179);
-    border: 3px solid rgb(203, 222, 215);
+	color: rgb(179, 179, 179);
+	border: 3px solid rgb(203, 222, 215);
 }
 
 .button--card {
-    background-color: rgb(247, 136, 255);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid rgb(189, 91, 227);
-    font-size: 3em;
-    box-shadow: 1px 1px 1px rgb(0, 0, 0);
+	aspect-ratio: 1 / 1;
+	background-color: rgb(247, 136, 255);
+	border: 3px solid rgb(189, 91, 227);
+	grid-column: span 1;
+	font-size: 3em;
+	box-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 .button--card--active {
-    background-color: rgb(83, 255, 189);
-    box-shadow: 1px 1px 1px rgb(0, 0, 0);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid rgb(132, 239, 198);
-    font-size: 3em;
+	aspect-ratio: 1 / 1;
+	background-color: rgb(83, 255, 189);
+	box-shadow: 1px 1px 1px rgb(0, 0, 0);
+	border: 3px solid rgb(132, 239, 198);
+	font-size: 3em;
 }
 
 .desc--text {
-    margin-bottom: 1rem;
-    margin-top: 0;
-    color: rgb(255, 160, 65);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-    font-family:'Teko', sans-serif;
-    font-size: 2rem;
+	margin-bottom: 1rem;
+	margin-top: 0;
+	color: rgb(255, 160, 65);
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	font-family: "Teko", sans-serif;
+	font-size: 2rem;
 }
 
 footer {
-    margin: 0;
-    grid-area: "info";
+	margin: 0;
+	grid-area: "info";
 }
