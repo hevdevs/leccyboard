@@ -5,13 +5,15 @@
 }
 
 .App {
-	height: 100vh;
 	display: flex;
-	justify-content: center;
+	max-width: 98.57rem;
+	overflow: none;
 	flex-direction: column;
 	text-align: center;
 	align-items: center;
-	justify-content: space-between;
+	margin: 0;
+	justify-content: space-evenly;
+	min-height: 100%;
 }
 
 header {
@@ -28,17 +30,31 @@ header {
 	display: inline-grid;
 	flex-wrap: nowrap;
 	flex-grow: 2;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 2fr;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 3px;
-	height: 60vw;
+	min-height: 50vh;
 	margin-bottom: 1rem;
 	aspect-ratio: 1/1;
 	align-self: center;
+	padding-bottom: 2rem;
 }
 
 .score--container {
 	grid-area: "score";
+	padding-bottom: 2rem;
+}
+
+.start--button {
+	height: 4rem;
+	border: 3px solid rgb(83, 255, 189);
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	font-family: "Teko", sans-serif;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+	box-shadow: 1px 1px 1px rgb(0, 0, 0);
+	color: rgb(247, 136, 255);
+	font-size: 2rem;
 }
 
 #curr--score {
@@ -64,19 +80,7 @@ h1 {
 	margin-bottom: 0;
 }
 
-button {
-	height: 4rem;
-	border: 3px solid rgb(83, 255, 189);
-	border-radius: 1rem;
-	padding: 0.5rem 1rem;
-	font-family: "Teko", sans-serif;
-	text-shadow: 1px 1px 1px rgb(0, 0, 0);
-	box-shadow: 1px 1px 1px rgb(0, 0, 0);
-	color: rgb(247, 136, 255);
-	font-size: 2rem;
-}
-
-button:disabled {
+.start--button:disabled {
 	color: rgb(179, 179, 179);
 	border: 3px solid rgb(203, 222, 215);
 }
@@ -96,6 +100,10 @@ button:disabled {
 	box-shadow: 1px 1px 1px rgb(0, 0, 0);
 	border: 3px solid rgb(132, 239, 198);
 	font-size: 3em;
+}
+
+.disabled {
+	pointer-events: none;
 }
 
 .desc--text {

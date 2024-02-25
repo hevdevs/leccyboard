@@ -1,12 +1,24 @@
-import React from 'react';
+import React from "react";
 
-const StartButton = ({ setGameStarted, runButtonSequence, gameStarted, playerSequence, simonSequence}) => {
+const StartButton = ({
+	setGameStarted,
+	runButtonSequence,
+	gameStarted,
+	playerSequence,
+	simonSequence,
+	setDisableButtons,
+}) => {
 	return (
-        <button
-            disabled={gameStarted && playerSequence.length !== simonSequence.length ? true : false}
-			onClick={() => {
+		<button
+			className="start--button"
+			disabled={
+				gameStarted && playerSequence.length !== simonSequence.length
+					? true
+					: false
+			}
+			onClick={async () => {
 				setGameStarted(true);
-				runButtonSequence()
+				await runButtonSequence();
 			}}
 		>
 			{simonSequence.length === 0 ? "Play" : "Next"}

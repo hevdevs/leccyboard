@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import sadWah from '../assets/wah.mp3';
+import React, { useState } from "react";
+import sadWah from "../assets/wah.mp3";
 
 export const Buttoncard = ({
 	soundButton,
@@ -14,14 +14,17 @@ export const Buttoncard = ({
 	setHighScore,
 	gamesWon,
 	highscore,
+	disableButtons,
+	setDisableButtons,
 }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const audio = new Audio(soundButton.link);
-	const failAudio = new Audio(sadWah)
+	const failAudio = new Audio(sadWah);
 
 	const handleButtonPress = () => {
 		setIsPlaying(true);
+		setDisableButtons(true);
 		if (simonSequence[sequencePos] !== soundButton.id) {
 			//lose scenario
 			if (gamesWon > highscore) {
@@ -39,15 +42,16 @@ export const Buttoncard = ({
 		} else if (
 			(simonSequence[sequencePos] === soundButton.id &&
 				simonSequence.length) ===
-			playerSequence.length + 1
+				playerSequence.length + 1 &&
+			!disableButtons
 		) {
 			//win scenario
 			audio.play();
 			setTimeout(() => {
 				setIsPlaying(false);
-			}, 350);
-			setGamesWon((currVal) => ++currVal);
+			}, 0);
 			setSequencePos(0);
+			setGamesWon((currVal) => ++currVal);
 			setPlayerSequence([]);
 			setGameStarted(false);
 		} else {
@@ -61,15 +65,17 @@ export const Buttoncard = ({
 			audio.play();
 			setTimeout(() => {
 				setIsPlaying(false);
+				setDisableButtons(false);
 			}, 300);
 		}
 	};
 
 	return (
-		<div
+		<button
 			id={soundButton.id}
-			className={isPlaying ? 'button--card--active' : 'button--card'}
+			disabled={disableButtons}
+			className={isPlaying ? `button--card--active` : `button--card`}
 			onClick={handleButtonPress}
-		></div>
+		></button>
 	);
 };
