@@ -1,5 +1,5 @@
 # leccyboard
-Link to hosted game: https://zippy-basbousa-faa975.netlify.app/
+[Link to hosted game](https://leccyboard.netlify.app/)
 
 A musical pattern memory game (best viewed in browser, mobile version TBA)
 
